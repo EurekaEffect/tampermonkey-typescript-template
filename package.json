@@ -1,0 +1,18 @@
+{
+  "name": "tampermonkey-typescript-template",
+  "description": "A simple tampermonkey typescript template using webpack.",
+  "author": "EurekaEffect",
+  "version": "1.0",
+  "scripts": {
+    "build": "webpack --mode production && cd build-tool && node generate-user-config.js"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "dependencies": {
+    "ts-loader": "^9.5.2",
+    "webpack": "^5.99.9"
+  },
+  "devDependencies": {
+    "webpack-cli": "^6.0.1"
+  }
+}

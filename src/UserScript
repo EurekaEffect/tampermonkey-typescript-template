@@ -1,0 +1,11 @@
+// ==UserScript==
+// @name            Tampermonkey Typescript Template
+// @description     A simple tampermonkey typescript template using webpack.
+// @author          EurekaEffect
+// @version         1.0
+
+// @match           *
+
+// @grant           unsafeWindow
+// @run-at          document-idle
+// ==/UserScript==
