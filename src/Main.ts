@@ -1,5 +1,8 @@
+import { getRandomNumber } from "./Util";
+
 ;(async function () {
     console.log('You will see this prompt each time you open a new tab.')
+    console.log('I love random numbers! ' + getRandomNumber())
 
     console.log(window)         // Returns 'Proxy'.
     console.log(getWindow())    // Returns 'Window', a proper one.

@@ -4,7 +4,7 @@
   "author": "EurekaEffect",
   "version": "1.0",
   "scripts": {
-    "build": "webpack --mode production && cd build-tool && node generate-user-config.js"
+    "build": "webpack --mode production && node ./build-tool/generate-user-config.js"
   },
   "keywords": [],
   "license": "MIT",

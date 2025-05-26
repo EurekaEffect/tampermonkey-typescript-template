@@ -21,11 +21,10 @@ const __dirname = path.dirname(__filename)
     )
 })()
 
-
 function getFileContent(file_name) {
-    const directory = '../'
+    const root_directory = path.resolve(__dirname, '..')
 
-    const result = recursiveSearch(directory, file_name)
+    const result = recursiveSearch(root_directory, file_name)
 
     if (result) {
         return {
@@ -33,7 +32,7 @@ function getFileContent(file_name) {
             content: fs.readFileSync(result, 'utf-8')
         }
     } else {
-        throw Error('Failed to find \'UserScript\' in the directory.')
+        throw new Error(`Failed to find '${file_name}' in the directory tree starting from ${root_directory}.`)
     }
 }
 
@@ -41,15 +40,14 @@ function recursiveSearch(directory, file_name) {
     const files = fs.readdirSync(directory)
 
     for (const file of files) {
-        const full_Path = path.join(directory, file)
-        const stat = fs.statSync(full_Path)
+        const full_path = path.join(directory, file)
+        const stat = fs.statSync(full_path)
 
         if (stat.isDirectory()) {
-            const found = recursiveSearch(full_Path, file_name)
-
+            const found = recursiveSearch(full_path, file_name)
             if (found) return found
         } else if (file === file_name) {
-            return full_Path
+            return full_path
         }
     }
 
